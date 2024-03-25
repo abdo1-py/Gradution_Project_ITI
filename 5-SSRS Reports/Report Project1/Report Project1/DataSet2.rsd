@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description />
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DWH</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@Student_ID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>false</rd:IsMultiValued>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT        DEPARTMENT_DIM.D_NAME, DEPARTMENT_DIM.D_BRANCH
+FROM            DEPARTMENT_DIM INNER JOIN
+                         GRADE_FACT ON DEPARTMENT_DIM.DEPARTMENT_SK = GRADE_FACT.DEPARTMENT_SK_FK INNER JOIN
+                         STUDENT_DIM ON GRADE_FACT.STUDENT_SK_FK = STUDENT_DIM.STUDENT_SK
+WHERE        (STUDENT_DIM.ST_ID_BK = @Student_ID)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="D_NAME">
+        <DataField>D_NAME</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="D_BRANCH">
+        <DataField>D_BRANCH</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

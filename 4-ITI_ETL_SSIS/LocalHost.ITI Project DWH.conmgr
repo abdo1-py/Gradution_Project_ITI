@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ITI Project DWH"
+  DTS:DTSID="{0BF3B5C4-6E14-489D-A87E-C9B6CA525D94}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ITI Project DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ITI_ETL-{0BF3B5C4-6E14-489D-A87E-C9B6CA525D94}LocalHost.ITI Project DWH;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
